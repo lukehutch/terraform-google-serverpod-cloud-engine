@@ -117,7 +117,7 @@ resource "google_compute_url_map" "serverpod" {
 
 resource "google_compute_backend_service" "api" {
   name     = "serverpod-${var.runmode}-backend-api"
-  protocol = "HTTP"
+  protocol = "HTTPS"
 
   backend {
     group           = google_compute_instance_group_manager.serverpod.instance_group
@@ -133,7 +133,7 @@ resource "google_compute_backend_service" "api" {
 
 resource "google_compute_backend_service" "insights" {
   name     = "serverpod-${var.runmode}-backend-insights"
-  protocol = "HTTP"
+  protocol = "HTTPS"
 
   backend {
     group           = google_compute_instance_group_manager.serverpod.instance_group
@@ -149,7 +149,7 @@ resource "google_compute_backend_service" "insights" {
 
 resource "google_compute_backend_service" "web" {
   name       = "serverpod-${var.runmode}-backend-web"
-  protocol   = "HTTP"
+  protocol   = "HTTPS"
   enable_cdn = true
 
   backend {
