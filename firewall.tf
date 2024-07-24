@@ -11,6 +11,8 @@ resource "google_compute_firewall" "serverpod-instance" {
     ports    = ["8080-8082"]
   }
 
+  health_checks = [google_compute_health_check.serverpod-balancer.id]
+
   target_tags = ["serverpod-${var.runmode}-instance"]
 }
 
