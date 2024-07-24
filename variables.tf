@@ -26,9 +26,15 @@ variable "top_domain" {
   type        = string
 }
 
-variable "authorized_networks" {
-  description = "The networks authorized to connect to the database from outside the Serverpod infrastructure."
-  type        = map
+variable "authorized_networks_name" {
+  description = "The name of the network authorized to connect to the database from outside the Serverpod infrastructure."
+  type        = string
+  default     = null
+}
+
+variable "authorized_networks_ip_range" {
+  description = "The IP address range of the network authorized to connect to the database from outside the Serverpod infrastructure, in CIDR notation."
+  type        = string
   default     = null
 }
 
