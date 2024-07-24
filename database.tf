@@ -15,12 +15,9 @@ resource "google_sql_database_instance" "serverpod" {
     }
 
     ip_configuration {
-      ipv4_enabled    = true
-      private_network = google_compute_network.serverpod.id
-      authorized_networks {
-        name = var.authorized_networks_name
-        value = var.authorized_networks_ip_range
-      }
+      ipv4_enabled        = true
+      private_network     = google_compute_network.serverpod.id
+      authorized_networks = var.authorized_networks
     }
   }
 
