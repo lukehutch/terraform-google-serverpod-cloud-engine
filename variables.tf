@@ -28,7 +28,10 @@ variable "top_domain" {
 
 variable "authorized_networks" {
   description = "The networks authorized to connect to the database from outside the Serverpod infrastructure."
-  type        = map(string)
+  type        = map(object({
+    name  = string
+    value = string
+  }))
   default     = null
 }
 
