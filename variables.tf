@@ -32,6 +32,7 @@ variable "authorized_networks" {
     name      = string
     value     = string
   })
+  default     = null
 }
 
 variable "autoscaling_min_size" {
