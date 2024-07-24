@@ -25,7 +25,7 @@ resource "google_sql_database_instance" "serverpod" {
           value = var.authorized_networks.value
         }
       }
-      authorized_networks = var.authorized_networks == null ? {} : var.authorized_networks
+      authorized_networks = var.authorized_networks
     }
   }
 
