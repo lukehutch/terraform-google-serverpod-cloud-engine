@@ -161,6 +161,8 @@ resource "google_compute_backend_service" "web" {
       include_protocol = true
       include_query_string = true
       include_http_headers = ["Cache-Control"]
+      signed_url_cache_max_age_sec = 0
+      default_ttl = null
     }
   }
 
